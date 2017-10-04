@@ -1,0 +1,51 @@
+body {
+	font-family: Roboto, sans-serif;
+}
+
+.cardContainer {
+	perspective: 2000px;
+	position: absolute;
+	margin-top: 200px;
+	margin-left: 200px;
+}
+
+.card {
+	width: 424px;
+	height: 240px;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform .5s ease-out;
+}
+
+.cardFace {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border-radius: 10px;
+	box-shadow: 0 0 42px 0 rgba(0,0,0,0.4);
+}
+
+.flipped {
+	transform: rotateY(-180deg);
+}
+
+.front {
+	background: green;
+	z-index: 1;
+}
+
+.back {
+	background: red;	
+	z-index: 0;
+	transform: rotateY(-180deg);
+}
+
+.flipButton {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
+}
